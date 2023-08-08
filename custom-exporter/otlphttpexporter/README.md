@@ -1,3 +1,7 @@
+## This exporter is a modified version of the otlphttp exporter provided by the OpenTelemetry community
+It uses JSON marshaling instead of the original binary protobuf marshaling in order to send OTLP/JSON formatted trace data to a specified endpoint.
+Only the marshaling of traces is changed to JSON. Metrics and logs still use the protobuf marshaling.
+
 # OTLP/HTTP Exporter
 
 | Status                   |                       |
