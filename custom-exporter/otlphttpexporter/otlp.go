@@ -259,7 +259,7 @@ type partialSuccessHandler func(protoBytes []byte) error
 
 func tracesPartialSuccessHandler(protoBytes []byte) error {
 	exportResponse := ptraceotlp.NewExportResponse()
-	err := exportResponse.UnmarshalJSON(protoBytes)
+	err := exportResponse.UnmarshalProto(protoBytes)
 	if err != nil {
 		return err
 	}
