@@ -23,7 +23,7 @@ processors:
     check_interval: 5s
   resource:
     attributes:
-      - key: workspaceId
+      - key: workspace.id
         value: ${env:WORKSPACE_ID}
         action: insert
 
@@ -31,21 +31,8 @@ exporters:
   logging:
     verbosity: detailed
   otlphttp:
-    endpoint: "https://telemetry.mentoracademy.org/telemetry-edtech-labs-si-umich-edu/dev/otel"
+    traces_endpoint: "https://telemetry.mentoracademy.org/telemetry-edtech-labs-si-umich-edu/dev/otel"
     compression: none
-  # awss3:
-  #   s3uploader:
-  #       region: 'us-east-1'
-  #       s3_bucket: 'telemetry-edtech-labs-si-umich-edu'
-  #       s3_prefix: 'dev/openTelemetryTest'
-  #       s3_partition: 'minute'
-  #       endpoint: 'https://telemetry.mentoracademy.org'
-  # awss3:
-  #   s3uploader:
-  #       region: 'us-east-1'
-  #       s4_bucket: 'otel-jupyter'
-  #       s3_prefix: 'dev'
-  #       s3_partition: 'hour'
 
 service:
   pipelines:
